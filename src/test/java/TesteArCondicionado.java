@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 
-import br.ifes.arcondicionado.control.ArCondicionado;
-import br.ifes.arcondicionado.control.SensorMonitor;
 import br.ifes.arcondicionado.model.Sensormeter;
 import java.io.Console;
 import junit.framework.Assert;
@@ -28,33 +26,10 @@ public class TesteArCondicionado {
     
     @Test
     public void TesteArCondicionado(){
-        Sensormeter sensor = new Sensormeter();
-        ArCondicionado arCondicionado = new ArCondicionado();
-                
-        sensor.addObserver(arCondicionado);
-        sensor.setSensor1(2);
-        sensor.setSensor2(5);
-        sensor.setSensor3(7);
-        sensor.setCurrentPessoas();
         
-        Assert.assertEquals("Temperatura normalizando", null);
-        //int compareTo = arCondicionado.toString().compareTo("Temperatura normalizando");
-        //Assert.assertEquals(2, compareTo);
     }
     
-    @Test
-    public void TesteSensorMonitor(){
-        Sensormeter sensor = new Sensormeter();
-        SensorMonitor monitor = new SensorMonitor();
-                
-        sensor.addObserver(monitor);
-        sensor.setSensor1(2);
-        sensor.setSensor2(5);
-        sensor.setSensor3(7);
-        sensor.setCurrentPessoas();
-        
-        Assert.assertEquals("ALERT - Temperatura subindo", null);
-    }
+    
     
 
     // TODO add test methods here.
