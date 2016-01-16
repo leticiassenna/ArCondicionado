@@ -6,7 +6,6 @@
 package br.ifes.arcondicionado.app;
 
 import br.ifes.arcondicionado.control.ArCondicionado;
-import br.ifes.arcondicionado.control.SensorMonitor;
 import br.ifes.arcondicionado.model.Sensormeter;
 
 /**
@@ -15,23 +14,18 @@ import br.ifes.arcondicionado.model.Sensormeter;
  */
 public class App {
     public static void main(String[] args){
-        SensorMonitor monitor = new SensorMonitor();
         
-        Sensormeter sensor = new Sensormeter();
+        Sensormeter sensor1 = new Sensormeter();
+        Sensormeter sensor2 = new Sensormeter();
+        Sensormeter sensor3 = new Sensormeter();
         ArCondicionado arCondicionado = new ArCondicionado();
                 
-        sensor.addObserver(arCondicionado);
-        sensor.addObserver(monitor);
-        sensor.setSensor1(2);
-        sensor.setSensor2(5);
-        sensor.setSensor3(7);
-        sensor.setCurrentPessoas();
-        
-        sensor.setSensor1(0);
-        sensor.setSensor2(0);
-        sensor.setSensor3(0);
-        sensor.setCurrentPessoas();
-
+        sensor1.addObserver(arCondicionado);
+        sensor1.setCurrentPessoas(2, 1);
+        sensor2.addObserver(arCondicionado);
+        sensor2.setCurrentPessoas(5, 2);
+        sensor3.addObserver(arCondicionado);
+        sensor3.setCurrentPessoas(7, 3);
         
     }
 }

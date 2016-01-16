@@ -13,40 +13,20 @@ import java.util.Observable;
  */
 public class Sensormeter extends Observable{
     private int currentNumPessoas = 0;
-    private int currentNumPessoasSensor1 = 0;
-    private int currentNumPessoasSensor2 = 0;
-    private int currentNumPessoasSensor3 = 0;
+    private int codSensor;
     
-    public void setCurrentPessoas(){
-        calculaMediaPessoa();
-        
+    public void setCurrentPessoas(int numPessoas, int codSensor){
+        this.currentNumPessoas = numPessoas;
+        this.codSensor = codSensor;
         setChanged();
         notifyObservers();
-    }
-    
-    public int calculaMediaPessoa(){
-        this.currentNumPessoas = (currentNumPessoasSensor1 + currentNumPessoasSensor2 + currentNumPessoasSensor3)/3;
-        if(currentNumPessoas<=0){
-            return 0;
-        }
-        else{
-            return currentNumPessoas;
-        }
     }
     
     public int getCurrentNumPessoas(){
         return currentNumPessoas;
     }
     
-    public void setSensor1(int pessoas){
-        this.currentNumPessoasSensor1 = pessoas;
-    }
-    
-    public void setSensor2(int pessoas){
-        this.currentNumPessoasSensor2 = pessoas;
-    }
-    
-    public void setSensor3(int pessoas){
-        this.currentNumPessoasSensor3 = pessoas;
+    public int getCodSensor(){
+        return codSensor;
     }
 }
