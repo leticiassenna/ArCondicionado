@@ -9,7 +9,6 @@ import br.ifes.arcondicionado.model.Sensormeter;
 import java.util.HashMap;
 import java.util.Observable;
 import java.util.Observer;
-import java.math.*;
 
 /**
  *
@@ -52,7 +51,8 @@ public class ArCondicionado implements Observer{
     public int media_sensores(Sensormeter sensor1, Sensormeter sensor2, Sensormeter sensor3){
         this.mediaPessoas = (int) Math.round((sensor1.getCurrentNumPessoas() + sensor2.getCurrentNumPessoas() 
                 + sensor3.getCurrentNumPessoas())/3);
-       /* System.out.println((sensor1.getCurrentNumPessoas() + sensor2.getCurrentNumPessoas() 
+        /* COMETARIO REFERENCE AO ACERTO DO CALCULO PARA O VALOR DA TEMPERATURA 
+        System.out.println((sensor1.getCurrentNumPessoas() + sensor2.getCurrentNumPessoas() 
         + sensor3.getCurrentNumPessoas())%3);
         double abc = (2.0+5.0+7.0)/3.0;
         int teste = (int) Math.round(4.6);
